@@ -1,7 +1,7 @@
 -- ProbablyEngine Rotation Packager
 -- Custom Enhancement Shaman Rotation
 -- Created on Nov 15th 2013 2:04 pm
-ProbablyEngine.rotation.register_custom(263, "boxo's shaman", {
+ProbablyEngine.rotation.register_custom(263, "GauMeo 0.1", {
 
 --Trinket Procs
     { "#trinket1" },
