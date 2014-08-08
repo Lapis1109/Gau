@@ -1,0 +1,87 @@
+-- ProbablyEngine Rotation Packager
+-- Custom Enhancement Shaman Rotation
+-- Created on Nov 4th 2013 2:54 pm
+ProbablyEngine.rotation.register_custom(263, "GauMeo PvP 0.1",  {
+
+    -- Kick
+    { "Wind Shear", "modifier.interrupts" },
+
+    --HotKeys
+    --{ "108287", "modifier.rshift", "ground" }, --Totemic Projection
+	{ "30823", "modifier.lshift"}, --Shamanistic Rage
+	{ "108271", "modifier.lshift"}, --Astral Shift
+	{ "1064", {   --Chain Heal
+	  "player.buff(53817).count = 5",
+	  "@cpoworks.IsMouseButton4Down" },
+	  "mouseover" },
+	{ "51514", {    --Hex
+	  "@cpoworks.IsMouseButton5Down" },
+	  "focus" },
+	
+	-- Buffs
+	{ "8238", "!player.enchant.mainhand" }, --Windfury
+	{ "8024", "!player.enchant.offhand" }, --Flametounge
+	{ "324", "!player.buff(324)" }, --Lightning Shield
+    { "5394", "player.health < 60" }, --Healing Stream Totem
+	
+	
+    -- Cooldowns
+	{{
+    { "2894"}, --Fire Ele
+    { "2062"}, --Earth Ele
+    { "51533"}, --Wolves
+    { "120668", "!player.buff(120668)"  }, --Stormlash
+    { "16188", "player.spell(16188).exists"}, --Ancestral Swiftness
+	{ "16166", "player.spell(16166).exists" }, --Elemental Mastery
+    { "114049", "!player.buff(114051)" }, --Ascendance
+	{"#gloves"}, --Gloves
+	}, "modifier.cooldowns"},
+
+
+    -- Totems
+    { "3599", "@cpoworks.SearingTotem"}, --Searing totem
+
+
+	-- AoE Rotation
+	{{
+		{ "8050", "target.debuff(8050).duration <= 12" }, --Flame shock
+		{ "60103", "target.debuff(8050)" }, --Lavalash
+		{ "421", "player.buff(53817).count = 5"}, --Chain Lightning
+		{ "73680" }, --Unleashed Elements
+		{ "1535", "target.debuff(8050)" }, --Fire Nova
+		{ "17364" },  --Stormstrike
+		{ "115356" }, --Stormblast
+		{ "8042" }, --Earth Shock
+	}, "modifier.multitarget"},
+	
+
+    -- Rotation
+	{{
+		{ "73680" }, --Unleashed Elements
+	{ "117014", {					-- elemental blast
+	  "player.buff(53817).count = 5",
+	  "player.spell(117014).exists"
+	  }}, 
+		{ "403", "player.buff(53817).count = 5" }, --Lightning Bolt
+		{ "17364" },  --Stormstrike
+		{ "115356" }, --Stormblast
+		{ "60103" }, --Lavalash
+		{ "8050",{ --Flame Shock with ue
+			"player.buff(73683)", 
+			"target.debuff(8050).duration <= 3"  }}, 
+		{ "8050", "target.debuff(8050).duration <= 3" }, --Flame Shock expireing
+		{ "8042" }, --Earth Shock
+	}, "!modifier.multitarget"},
+
+
+}, {
+
+	-- Buffs
+	{ "8238", "!player.enchant.mainhand" }, --Windfury
+	{ "8024", "!player.enchant.offhand" }, --Flametounge
+	{ "324", "!player.buff(324)" }, --Lightning Shield
+
+	-- Heal
+	{ "5394", "player.health < 60" }, --Healing Stream Totem
+
+})
