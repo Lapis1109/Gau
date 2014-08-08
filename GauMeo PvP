@@ -142,7 +142,7 @@ ProbablyEngine.rotation.register_custom(263, "GauMeo 0.1", {
 	  "player.spell(117014).exists"
 	}},
 	{ "117014", {					-- elemental blast
-	  "player.buff(53817).count >= 1",
+	  "player.buff(53817).count = 5",
 	  "player.spell(117014).exists"
 	  }}, 
 	{ "421", { 					-- CL instant with maelstrom weapon (cleave)
