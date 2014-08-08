@@ -4,8 +4,6 @@
 ProbablyEngine.rotation.register_custom(263, "GauMeo 0.1", {
 
 --Trinket Procs
-    { "#trinket1" },
-    { "#trinket2" },
 
 --Get Outta that Shit
     { "Tremor Totem", "player.state.fear" },
@@ -31,13 +29,11 @@ ProbablyEngine.rotation.register_custom(263, "GauMeo 0.1", {
 	}},
 
 	{ "108271", { 				-- astral shift
-	  "player.spell(108271).exists",
 	  "modifier.lalt",
 	  "!player.buff(30823)"
 	}},
 
 	{ "108270", { 				-- stone bulwark totem
-	  "player.spell(108270).exists",
 	  "modifier.lalt",
 	  "!player.buff(30823)"
 	}},
